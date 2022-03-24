@@ -17,7 +17,7 @@ public abstract class Empleado extends Persona {
 
     //MÉTODOS
     //Calcula el IRPF(abstracto)
-    abstract double calcularIRPF();
+    public abstract double calcularIRPF();
 
     //Constructores
     public Empleado() {
