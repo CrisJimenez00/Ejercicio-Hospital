@@ -5,6 +5,8 @@
  */
 package hospital;
 
+import java.util.Random;
+
 /**
  *
  * @author Cris
@@ -34,6 +36,14 @@ public class Paciente extends Persona {
     }
 
     public void tomarMedicina(String medicamento) {
+        Random random = new Random();
+        boolean curado = random.nextBoolean();
+
         System.out.println("Estoy tomando " + medicamento);
+        if (curado) {
+            System.out.println("El paciente se ha curado");
+        } else {
+            System.out.println("El paciente no se ha curado");
+        }
     }
 }
