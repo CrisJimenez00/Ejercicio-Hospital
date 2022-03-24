@@ -48,6 +48,10 @@ public class Medico extends Empleado {
 
     @Override
     public double calcularIRPF() {
-        return this.getSalario() * 0.21;
+        if (getEspecialidad().equalsIgnoreCase("cirujano")) {
+            return this.getSalario() * (25 / 100);
+        } else {
+            return this.getSalario() * (23.5 / 100);
+        }
     }
 }

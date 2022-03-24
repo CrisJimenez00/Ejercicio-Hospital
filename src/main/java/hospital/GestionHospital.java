@@ -10,5 +10,15 @@ package hospital;
  * @author Cris
  */
 public class GestionHospital {
+    public static void main(String[] args) {
+        Hospital hospital = new Hospital("Costa del Sol", "Tatiana Vera", 10000);
+        
+        
+        
+        
+        
+        
+        
+    }
     
 }
