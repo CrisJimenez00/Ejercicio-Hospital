@@ -21,8 +21,7 @@ public class NIF {
 
     //metodo para renorvar dni
     public LocalDate renovar(LocalDate fechaSolicitudRenovacion) {
-        LocalDate fecha = LocalDate.now();
-        fecha = fechaSolicitudRenovacion.plusYears(10);
+        LocalDate fecha = fechaSolicitudRenovacion.plusYears(10);
 
         return fecha;
     }
@@ -106,7 +105,11 @@ public class NIF {
     }
 
     //Constructores
-    public NIF(String numero) {
+    public NIF() {
+
+    }
+
+    public NIF(String numero, LocalDate fechaCaducidad) {
         this.numero = numero;
         if (numero.length() == 8) {
             this.letraDNI = generaLetra(numero);
@@ -114,7 +117,7 @@ public class NIF {
         } else {
             System.out.println("El numero tiene que tener 8 dígitos");
         }
-
+        this.fechaCaducidad = fechaCaducidad;
     }
 
     //getters, no setters
@@ -128,6 +131,10 @@ public class NIF {
 
     public int getContador() {
         return contador;
+    }
+
+    public LocalDate getFechaCaducidad() {
+        return fechaCaducidad;
     }
 
     //toString

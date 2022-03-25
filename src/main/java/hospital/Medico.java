@@ -38,20 +38,24 @@ public class Medico extends Empleado {
         this.especialidad = especialidad;
     }
 
+    //Método el cual hace que un médico trate a un paciente, indicando así el 
+    //nombre del paciente, el medicamento e indirectamente llama al método de 
+    //tomarMedicina de la clase paciente
     public void tratarPaciente(Paciente paciente, String medicina) {
-        System.out.println("El médico " + this.getNombre() + " le ha recetado al paciente "
+        System.out.println("El médico " + this.getNombre() + " " + this.getApellidos() + " le ha recetado al paciente "
                 + paciente.getNombre() + " la medicina " + medicina);
 
         paciente.tomarMedicina(medicina);
 
     }
 
+    //Calcula el IRPF dependiendo si es cirujano o no
     @Override
     public double calcularIRPF() {
         if (getEspecialidad().equalsIgnoreCase("cirujano")) {
-            return this.getSalario() * (25 / 100);
+            return this.getSalario() * 0.25;
         } else {
-            return this.getSalario() * (23.5 / 100);
+            return this.getSalario() * 0.235;
         }
     }
 }

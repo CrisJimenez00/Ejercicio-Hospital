@@ -12,21 +12,22 @@ import java.util.ArrayList;
  * @author Cris
  */
 public class Hospital {
-     private String nombre;
+
+    private String nombre;
     private String direccion;
     private int numCamas;
-    
+
     private ArrayList<Empleado> listaEmpleados;
     private ArrayList<Paciente> listaPacientes;
 
-    public void contratarEmpleado(Empleado empleado){
+    public void contratar(Empleado empleado) {
         listaEmpleados.add(empleado);
     }
-    
-    public void ingresarPaciente(Paciente paciente){
+
+    public void ingresar(Paciente paciente) {
         listaPacientes.add(paciente);
     }
-    
+
     public Hospital(String nombre, String direccion, int numeroCamas) {
         this.nombre = nombre;
         this.direccion = direccion;
@@ -51,12 +52,12 @@ public class Hospital {
         this.direccion = direccion;
     }
 
-    public int getNumeroCamas() {
+    public int getNumCamas() {
         return numCamas;
     }
 
-    public void setNumeroCamas(int numeroCamas) {
-        this.numCamas = numeroCamas;
+    public void setNumCamas(int numCamas) {
+        this.numCamas = numCamas;
     }
 
     public ArrayList<Empleado> getListaEmpleados() {
@@ -73,6 +74,11 @@ public class Hospital {
 
     public void setListaPacientes(ArrayList<Paciente> listaPacientes) {
         this.listaPacientes = listaPacientes;
+    }
+
+    @Override
+    public String toString() {
+        return "Hospital{" + "nombre=" + nombre + ", direccion=" + direccion + ", numCamas=" + numCamas + ", listaEmpleados=" + listaEmpleados + ", listaPacientes=" + listaPacientes + '}';
     }
 
 }

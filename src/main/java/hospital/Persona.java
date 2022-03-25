@@ -55,7 +55,11 @@ public abstract class Persona {
         return "Persona{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", nif=" + nif + '}';
     }
 
-    public void reovarNif(LocalDate fechaSolicitud) {
-        getNif().renovar(fechaSolicitud);
+    //Método el cual renueva el nif y le suma 10 años
+    public final void renovarNif(LocalDate fechaSolicitud) {
+        //Pongo un sour dentro para que salga directamente el resultado
+        //(la fecha con los 10 años sumados) cuando llamamos al método
+        System.out.println("la fecha de renovación ha cambiado a: " + getNif().renovar(fechaSolicitud));
+
     }
 }
